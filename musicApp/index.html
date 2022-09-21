@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../img/logo.ico" />
+    <title>MK W SIECI</title>
+  </head>
+  <body>
+    <div id="logo">
+      <a href="../index.html">
+        <img src="../img/emka-bez-tla.png" alt="logo" />
+      </a>
+    </div>
+    <div class="library-container">
+      <div class="library"></div>
+      <div class="toggle">
+        <i class="fas fa-chevron-right"></i>
+      </div>
+    </div>
+    <form>
+      <input type="text" id="search-bar" />
+      <button type="submit">Search</button>
+    </form>
+    <div class="player">
+      <h2 class="title"></h2>
+      <input type="range" min="0" class="music-range" value="0" />
+      <div class="btn prev"><i class="fas fa-step-backward"></i></div>
+      <div class="btn play"><i class="fas fa-play"></i></div>
+      <div class="btn next"><i class="fas fa-step-forward"></i></div>
+      <div class="btn mute"><i class="fas fa-volume-mute"></i></div>
+    </div>
+    <div class="container"></div>
+    <audio></audio>
+    <script src="./app.js"></script>
+  </body>
+</html>

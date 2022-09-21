@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../img/logo.ico" />
+    <title>MK W SIECI</title>
+  </head>
+  <body>
+    <div id="logo">
+      <a href="../index.html">
+        <img src="../img/emka-bez-tla.png" alt="logo" />
+      </a>
+    </div>
+    <h2>Random password generator</h2>
+    <div id="copy-success"></div>
+    <div class="container">
+      <div class="input">
+        <input type="text" id="result" readonly />
+        <div class="img">
+          <img src="./copy.png" alt="copy to clipboard" />
+        </div>
+      </div>
+      <div class="length">
+        <label for="length-input">Please enter the length of characters </label>
+        <input type="number" name="length" id="length-input" value="20" min="4" max="20" />
+      </div>
+      <div class="checkbox">
+        <label for="upper">Add uppercase letters</label>
+        <input type="checkbox" name="upper" id="upper" checked />
+      </div>
+      <div class="checkbox">
+        <label for="lower">Add lowercase letters</label>
+        <input type="checkbox" name="lower" id="lower" checked />
+      </div>
+      <div class="checkbox">
+        <label for="numbers">Add numbers</label>
+        <input type="checkbox" name="numbers" id="numbers" checked />
+      </div>
+      <div class="checkbox">
+        <label for="symbols">Add symbols</label>
+        <input type="checkbox" name="symbols" id="symbols" checked />
+      </div>
+      <button id="submit-button">Generate</button>
+    </div>
+    <footer>
+      This is password generator. You can generate random password max 20 characters length. Uppercase letters, lowercase letters symbols and numbers
+      included
+    </footer>
+    <script src="./app.js"></script>
+  </body>
+</html>

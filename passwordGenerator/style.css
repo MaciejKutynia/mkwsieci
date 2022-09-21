@@ -1,0 +1,359 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  font-family: "Georgia", sans-serif;
+  text-transform: uppercase;
+}
+
+#logo {
+  position: absolute;
+  top: 2rem;
+  left: 3rem;
+  width: 4rem;
+  height: 4rem;
+  filter: invert(1);
+}
+
+#logo img {
+  width: 100%;
+  height: 100%;
+}
+
+#copy-success {
+  display: none;
+  width: 80%;
+  height: 10vh;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(0, 0, 0);
+  border-radius: 0.8rem;
+  align-items: center;
+  font-size: 2rem;
+  justify-content: center;
+  color: white;
+  z-index: 2;
+}
+
+.container {
+  position: relative;
+  width: 80vw;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-right: 0.1rem solid rgba(0, 0, 0, 0.2);
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+  color: white;
+  flex-direction: column;
+  border-radius: 2rem;
+}
+
+h2 {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  margin-top: 10vh;
+}
+
+.container .input {
+  position: relative;
+  width: 40%;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .input .img {
+  width: 2rem;
+  height: 100%;
+  padding: 0 2rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
+    inset -2px -2px 8px rgba(255, 255, 255, 0.3),
+    inset 2px 2px 8px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.container .input .img img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.container .input #result {
+  width: 97%;
+  height: 100%;
+  border: none;
+  outline: none;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
+    inset -2px -2px 8px rgba(255, 255, 255, 0.3),
+    inset 2px 2px 8px rgba(0, 0, 0, 0.3);
+  font-size: 2rem;
+  padding: 1rem;
+  font-weight: bolder;
+}
+
+.container .length {
+  font-size: 2rem;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container .length #length-input {
+  text-align: center;
+  width: 10%;
+  outline: none;
+  border: none;
+  border-radius: 0.2rem;
+  align-self: flex-end;
+  margin-right: 1rem;
+  font-size: 1.7rem;
+  padding: 0.5rem 0;
+  height: 3rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
+    inset -2px -2px 8px rgba(255, 255, 255, 0.3),
+    inset 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.container .length #length-input::-webkit-inner-spin-button {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.container .checkbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  font-size: 1.8rem;
+  margin: 0 auto;
+}
+
+.container .checkbox input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-block;
+  width: 4rem;
+  height: 2rem;
+  background: #ff0000;
+  box-shadow: 2px 2px 5px rgba(15, 15, 15, 0.5),
+    inset 4px 4px 5px rgba(255, 255, 255, 0.3),
+    inset -4px -4px 5px rgba(15, 15, 15, 0.3);
+  border-radius: 2rem;
+  position: relative;
+  transition: 0.3s ease;
+  outline: none;
+  margin-right: 3rem;
+  border: none;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.container .checkbox input[type="checkbox"]::after {
+  content: "";
+  display: inline-block;
+  height: 2rem;
+  width: 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.3s ease;
+}
+.container .checkbox input[type="checkbox"]:checked::after {
+  left: 50%;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.container .checkbox input[type="checkbox"]:checked {
+  background: #00ff00;
+  box-shadow: inset -2px -2px 4px rgba(0, 0, 0, 0.3) inset 5px 5px 40px
+      rgba(255, 255, 255, 0.2),
+    2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.container #submit-button {
+  border: none;
+  outline: none;
+  padding: 1rem;
+  background-color: rgb(110, 110, 110);
+  color: white;
+  box-shadow: 4px 4px 10px rgba(13, 13, 13, 0.3);
+  margin: 1rem 0;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: 0.5s ease-in-out;
+  border-radius: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: bolder;
+  height: 7vh;
+  width: 20vw;
+  text-transform: uppercase;
+}
+
+.container #submit-button:hover {
+  transform: translate3d(-2px, -3px, 10px);
+  box-shadow: 10px 10px 15px rgba(255, 255, 255, 0.3),
+    inset -4px -4px 20px rgba(0, 0, 0, 0.3);
+  background-color: #00ff00;
+  color: black;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0vh;
+  left: 0;
+  height: 10vh;
+  width: 100%;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+@media (min-width: 1200px) {
+  footer {
+    bottom: 10vh;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 10px;
+  }
+
+  .container {
+    width: 80vw;
+  }
+
+  .container #result {
+    width: 90%;
+    height: 3rem;
+    font-size: 2rem;
+  }
+
+  .container #length-input {
+    font-size: 2rem;
+    height: 2rem;
+  }
+  .container .checkbox {
+    font-size: 2rem;
+  }
+
+  .container .input .img {
+    width: 2rem;
+    height: 2rem;
+    padding: 1.3rem 2rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
+      inset -2px -2px 8px rgba(255, 255, 255, 0.3),
+      inset 2px 2px 8px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .container .input .img img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  #copy-success {
+    font-size: 1.5rem;
+  }
+
+  .container #submit-button:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    justify-content: flex-start;
+    height: 100vh;
+  }
+  h2 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .container .input {
+    width: 95%;
+    height: 5vh;
+    margin: 0 auto;
+  }
+
+  .container .input .img,
+  .container .input #result {
+    height: 100%;
+  }
+
+  .container .length label {
+    width: 60%;
+    font-size: 1.3rem;
+  }
+
+  .container .length #length-input {
+    width: 20%;
+    height: 3rem;
+  }
+
+  .container .checkbox {
+    font-size: 1.3rem;
+  }
+
+  footer {
+    position: relative;
+    bottom: 0;
+    margin-top: 5vh;
+    font-size: 1.5rem;
+    width: 100%;
+    height: 15vh;
+  }
+
+  .container #submit-button {
+    background: #00ff00;
+    width: 60%;
+  }
+}

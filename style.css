@@ -1,0 +1,901 @@
+@font-face {
+  font-family: Adams;
+  src: url('./AdamasRegular-aM4g.otf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #111;
+  color: white;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: Georgia;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  height: 10vh;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  filter: invert(1);
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+  margin: 2rem 3rem;
+}
+
+#logo img {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#hamburger {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  cursor: pointer;
+  font-size: 3rem;
+  font-weight: 900;
+  width: 3rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  z-index: 3;
+  transition: 0.3s ease;
+}
+
+.little-nav {
+  display: none;
+}
+
+.line1,
+.line2 {
+  width: 3rem;
+  height: 0.5rem;
+  background: white;
+  pointer-events: none;
+  transition: 0.3s ease-out;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 25rem;
+  height: 100%;
+  background: white;
+  color: black;
+  z-index: 2;
+  transition: 0.4s ease-in-out;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+nav.active {
+  right: 0;
+}
+
+.nav-links {
+  list-style: none;
+  font-size: 2rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.nav-links li {
+  margin-bottom: 2rem;
+  pointer-events: all;
+  width: 100%;
+}
+
+.nav-links li a {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-links li a i {
+  margin-right: 2rem;
+  margin-left: 1rem;
+  display: inline-block;
+}
+
+.nav-links li a span {
+  margin-left: 1rem;
+  text-align: center;
+}
+
+.nav-links li:nth-child(2) a span {
+  margin-left: 1.5rem;
+}
+
+.mobile {
+  font-family: Consolas;
+  margin-left: 1rem;
+}
+
+.buttons {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: absolute;
+}
+
+.social {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 2rem;
+}
+
+.contact {
+  left: 1rem;
+  bottom: 10rem;
+  flex-direction: column;
+}
+
+.fa-at {
+  font-size: 2rem;
+}
+
+.fa-mobile-alt {
+  font-size: 2rem;
+}
+
+.contact .icon {
+  width: 100%;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.icon span {
+  font-size: 1.5rem;
+}
+.contact .icon i {
+  margin-right: 2rem;
+}
+
+.icon {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.icon a {
+  color: black;
+}
+
+.fa-linkedin-in {
+  color: #0e76a8;
+}
+
+.fa-facebook-square {
+  color: #3b5998;
+}
+
+.cv {
+  position: absolute;
+  left: 0;
+  margin-left: 1rem;
+  top: 20%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.cv span {
+  text-decoration: none;
+  color: black;
+  font-size: 2rem;
+}
+
+.fa-file-download {
+  font-size: 2rem;
+  margin-right: 2rem;
+}
+
+section {
+  margin-top: 10vh;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 90vh;
+}
+
+.my-photo {
+  margin-top: -2rem;
+  width: 43rem;
+  height: 51rem;
+  object-fit: cover;
+  position: relative;
+  left: 2%;
+}
+
+.border {
+  width: 2rem;
+  height: 110vh;
+  position: relative;
+  left: 4%;
+  margin-top: -15vh;
+  background: antiquewhite;
+  transform: rotate(10deg);
+}
+
+.second {
+  left: 0%;
+}
+
+.about-me-content {
+  margin-top: -10vh;
+  width: 50%;
+  position: relative;
+  font-family: Georgia;
+  text-align: center;
+}
+
+.about-me-content h1 {
+  position: relative;
+  font-size: 10rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.about-me-content span {
+  font-size: 4rem;
+  position: relative;
+  opacity: 1;
+}
+
+.about-me-content p {
+  text-align: left;
+  font-size: 2.1rem;
+  margin-left: 2rem;
+  line-height: 2rem;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.contact-form {
+  display: flex;
+  justify-content: space-evenly;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 45px rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 0.1rem solid rgba(255, 255, 255, 0.2);
+  border-right: 0.1rem solid rgba(255, 255, 255, 0.1);
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.1);
+  border-radius: 3rem;
+  align-items: center;
+  width: 50%;
+  height: 55vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  transition: all 0.4s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+  backdrop-filter: blur(50px);
+  z-index: 5;
+}
+
+.contact-form.active {
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  pointer-events: all;
+}
+
+.contact-form span {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 2.5rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.contact-input {
+  width: 60%;
+  height: 2.5rem;
+  background: transparent;
+  border: 0.1rem solid rgba(255, 255, 255, 0.9);
+  border-right: 0.1rem solid rgba(255, 255, 255, 0.7);
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.7);
+  outline: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+.contact-input::placeholder,
+#message::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+#message {
+  width: 60%;
+  height: 10rem;
+  background: transparent;
+  border: 0.1rem solid rgba(255, 255, 255, 0.9);
+  border-right: 0.1rem solid rgba(255, 255, 255, 0.7);
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.7);
+  outline: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem;
+  resize: none;
+}
+
+.button {
+  color: white;
+  border: 0.1rem solid rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 2rem;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.submit {
+  background: transparent;
+  border-right: 0.1rem solid rgba(255, 255, 255, 0.7);
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.7);
+  font-size: 1.8rem;
+  border-radius: 1rem;
+}
+
+.landing {
+  position: relative;
+  top: 10vh;
+  left: 0;
+  width: 100%;
+  height: 90vh;
+  margin-top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Adams';
+}
+
+.sign {
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: 1rem;
+  color: #888;
+}
+
+.firm-name {
+  font-size: 12rem;
+  animation: neon 1s infinite;
+}
+
+.owner-name {
+  font-size: 10rem;
+  animation: neon 1s infinite;
+  animation-delay: 0.5s;
+  position: relative;
+  left: 1%;
+}
+
+.text {
+  font-size: 6rem;
+  letter-spacing: 0.7rem;
+  animation: neon 1s infinite;
+  animation-delay: 1s;
+}
+
+.swipe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: #fff;
+  transform: translateX(0%);
+  z-index: 20;
+}
+
+.swipe img {
+  width: 10rem;
+  height: 10rem;
+  animation: rotate 2.5s linear infinite;
+}
+
+.response {
+  width: 35vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 2rem;
+  color: black;
+  font-size: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s ease-in-out;
+}
+
+.portfolio {
+  display: flex;
+  padding: 10vh 0;
+  height: 90vh;
+  justify-content: center;
+}
+
+.portfolio .frame {
+  width: 1664px;
+  overflow: hidden;
+  display: flex;
+}
+
+.portfolio .carousel {
+  width: 6000px;
+  display: flex;
+  grid-gap: 40px;
+  transition: all 0.6s ease-in-out;
+}
+
+.carousel-next-button,
+.carousel-prev-button {
+  font-size: 60px;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.carousel-prev-button {
+  opacity: 0;
+}
+
+.portfolio .item {
+  width: 38rem;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.portfolio-photo {
+  width: 100%;
+  height: 35rem;
+  object-fit: cover;
+  border-radius: 1rem;
+  border: 0.1rem solid white;
+}
+
+.portfolio .border {
+  width: 1.3rem;
+  left: 1%;
+}
+
+.portfolio .second {
+  left: 0.5%;
+}
+
+figcaption {
+  font-size: 1.3rem;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes neon {
+  0% {
+    color: #888;
+    filter: blur(0px);
+  }
+  6% {
+    color: #eee;
+    filter: blur(1px);
+  }
+  10% {
+    color: #888;
+    filter: blur(0px);
+  }
+  16% {
+    color: #eee;
+    filter: blur(1px);
+  }
+  22% {
+    color: #888;
+    filter: blur(0px);
+  }
+}
+
+@media (min-width: 1200px) {
+  #hamburger.hovered {
+    background: white;
+    height: 3.4rem;
+    width: 5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+
+  .little-nav {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    display: flex;
+    width: 18rem;
+    height: 3.4rem;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    top: 2rem;
+    right: 3%;
+    list-style: none;
+    transition: all 0.3s ease;
+    background: white;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+  }
+
+  .little-nav.active {
+    pointer-events: all;
+    opacity: 1;
+  }
+
+  .little-nav a li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .little-nav a {
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  body {
+    overflow-y: visible;
+  }
+
+  .border {
+    display: none;
+  }
+
+  nav {
+    width: 30rem;
+  }
+
+  .contact {
+    bottom: 5rem;
+  }
+
+  .sign {
+    letter-spacing: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .owner-name {
+    font-size: 9rem;
+    left: 0%;
+  }
+
+  .firm-name {
+    font-size: 12rem;
+  }
+
+  .text {
+    font-size: 5.5rem;
+  }
+
+  .my-photo {
+    width: 25rem;
+    height: 25rem;
+  }
+
+  figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    border: 0.1rem solid antiquewhite;
+    border-radius: 1rem;
+  }
+
+  section {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .my-photo {
+    width: 40rem;
+    height: 40rem;
+  }
+
+  .about-me-content {
+    top: 15%;
+  }
+
+  .about-me-content h1 {
+    font-size: 5rem;
+  }
+
+  .about-me-content span {
+    font-size: 4rem;
+  }
+
+  .about-me-content p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .portfolio {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .portfolio a {
+    margin-bottom: 3rem;
+    width: 80%;
+  }
+
+  .portfolio-photo {
+    width: 100%;
+    height: 30rem;
+  }
+
+  figcaption {
+    font-size: 1.5rem;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-input {
+    width: 90%;
+  }
+
+  #message {
+    width: 90%;
+  }
+
+  .response {
+    top: 50%;
+    z-index: 0;
+  }
+}
+
+@media (min-width: 900px) {
+  figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(30px);
+    width: 100%;
+    color: black;
+    height: 100%;
+    border-radius: 1rem;
+    border: 0.1rem solid antiquewhite;
+    z-index: 3;
+    transition: 0.5s ease-in-out;
+  }
+
+  .portfolio a {
+    z-index: 2;
+    transition: 0.3s ease-in-out;
+  }
+
+  .portfolio a:hover {
+    transform: scale(1.2);
+  }
+
+  .portfolio a:hover figcaption {
+    opacity: 0;
+  }
+
+  figcaption span {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  figcaption p {
+    text-transform: uppercase;
+  }
+
+  .portfolio a:nth-child(odd) figcaption {
+    color: antiquewhite;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 10px;
+  }
+
+  body {
+    overflow: auto;
+  }
+
+  nav {
+    width: 20rem;
+  }
+
+  .nav-links {
+    font-size: 1.5rem;
+  }
+
+  .cv span,
+  .fa-file-download {
+    font-size: 1.8rem;
+  }
+
+  .sign {
+    letter-spacing: 0.2rem;
+    color: #888;
+  }
+
+  .owner-name {
+    font-size: 2.9rem;
+    animation: neonPhone 1s infinite;
+    animation-delay: 0.5s;
+  }
+
+  .firm-name {
+    font-size: 3.6rem;
+    animation: neonPhone 1s infinite;
+  }
+
+  .text {
+    font-size: 1.6rem;
+    animation: neonPhone 1s infinite;
+    animation-delay: 1s;
+  }
+
+  .icon span {
+    font-size: 1rem;
+  }
+
+  .contact-form span {
+    font-size: 1.5rem;
+  }
+
+  #hamburger,
+  .line1,
+  .line2 {
+    width: 3rem;
+  }
+
+  #hamburger {
+    height: 1.5rem;
+    position: absolute;
+  }
+
+  .line1,
+  .line2 {
+    height: 0.5rem;
+  }
+
+  #logo {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .my-photo {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  section {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .about-me-content {
+    margin-top: 5vh;
+    width: 100%;
+  }
+
+  .about-me-content h1 {
+    font-size: 2rem;
+  }
+
+  .about-me-content span {
+    font-size: 2rem;
+  }
+
+  .about-me-content p {
+    font-size: 1rem;
+  }
+  .portfolio-photo {
+    width: 30rem;
+    height: 15rem;
+  }
+}
+
+@keyframes neonPhone {
+  0% {
+    color: #888;
+    filter: blur(0px);
+  }
+  6% {
+    color: #fff;
+    filter: blur(1px);
+  }
+  10% {
+    color: #888;
+    filter: blur(0px);
+  }
+  16% {
+    color: #fff;
+    filter: blur(1px);
+  }
+  22% {
+    color: #888;
+    filter: blur(0px);
+  }
+}

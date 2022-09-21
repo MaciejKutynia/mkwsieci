@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: rgb(255, 255, 255);
+}
+
+#logo {
+  position: absolute;
+  top: 2rem;
+  left: 3rem;
+  width: 4rem;
+  height: 4rem;
+}
+
+#logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60vw;
+  height: 30vh;
+  overflow: hidden;
+}
+
+.group {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  pointer-events: none;
+}
+
+.slide {
+  transition: all 0.3s ease-in-out;
+}
+
+.next,
+.prev {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .carousel {
+    justify-content: space-between;
+  }
+  .next,
+  .prev {
+    font-size: 1.5rem;
+  }
+
+  .frame {
+    width: 100%;
+    height: 15vh;
+  }
+}

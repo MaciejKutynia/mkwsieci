@@ -1,0 +1,362 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  color: rgb(40, 40, 40);
+
+  background: linear-gradient(120deg, rgb(255, 255, 255), rgb(204, 204, 204));
+}
+
+html {
+  font-size: 62.5%;
+}
+
+#logo {
+  position: absolute;
+  top: 2rem;
+  left: 3rem;
+  width: 4rem;
+  height: 4rem;
+  z-index: 4;
+}
+
+#logo img {
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  font-family: "Roboto", sans-serif;
+}
+
+path,
+svg,
+i {
+  pointer-events: none;
+}
+
+.colors {
+  min-height: 80vh;
+  display: flex;
+  color: rgb(180, 180, 180);
+}
+
+.color {
+  height: 80vh;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  overflow: hidden;
+}
+
+.color h2 {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.sliders {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  background: rgb(255, 255, 255);
+  padding: 1rem;
+  width: 80%;
+  pointer-events: none;
+  opacity: 0;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  transform: translateY(100px);
+  transition: all 0.2s ease-in-out;
+}
+
+.sliders.active {
+  transform: translateY(0);
+  pointer-events: all;
+  opacity: 1;
+}
+
+.sliders button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.2rem 0.5rem;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  color: white;
+  background: rgb(87, 77, 77);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+}
+
+.controls button {
+  border: none;
+  outline: none;
+}
+
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 20vh;
+}
+
+.panel button {
+  font-size: 1.2rem;
+  margin: 1rem;
+  padding: 1rem 2rem;
+  background: rgb(68, 40, 131);
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.panel p {
+  font-size: 1.2rem;
+}
+
+.library-panel,
+.generate-panel,
+.save-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.adjust,
+.lock {
+  border: none;
+  background: none;
+  color: black;
+  font-size: 2rem;
+  cursor: pointer;
+  margin: 2rem 0;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  margin: 1rem 0;
+  width: 100%;
+  position: relative;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.copy-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 3;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.copy-container.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.copy-popup {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 40%;
+  height: 20vh;
+  font-size: 1.8rem;
+  border-radius: 1.3rem;
+  transform: translateY(-3rem);
+  transition: transform 0.5s ease;
+}
+
+.copy-popup.active {
+  transform: translateY(0rem);
+}
+
+.save-container,
+.library-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.save-container.active,
+.library-container.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.save-popup,
+.library-popup {
+  position: relative;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: white;
+  width: 30%;
+  min-height: 30vh;
+  transition: transform 0.3s ease;
+  transform: translateY(10rem);
+}
+
+.save-popup.active,
+.library-popup.active {
+  transform: translateY(0rem);
+}
+
+.close-save,
+.close-library {
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  background: none;
+  align-self: flex-end;
+  position: absolute;
+  top: 2%;
+  z-index: 2;
+  right: 3%;
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.save-palette {
+  border: none;
+  outline: none;
+  background: rgb(68, 40, 131);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.save-name {
+  border: 0.1rem solid rgba(0, 0, 0, 0.3);
+  height: 2rem;
+  width: 20rem;
+  font-size: 1.5rem;
+  outline: none;
+}
+
+.save-popup h4 {
+  font-size: 1.2rem;
+}
+
+.save-popup.active {
+  transform: translateY(0rem);
+}
+
+.library-popup {
+  overflow-y: scroll;
+  height: 80vh;
+}
+
+.custom-palette {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+}
+#0 {
+  margin-top: 25vh;
+}
+
+.custom-palette h4 {
+  font-size: 1.2rem;
+}
+
+.custom-palette button {
+  border: none;
+  outline: none;
+  background: rgb(68, 40, 131);
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.small-preview {
+  display: flex;
+  flex: 1;
+}
+
+.small-preview div {
+  height: 5rem;
+  flex: 1;
+}
+
+.custom-palette .delete-palette-button {
+  background: none;
+  font-size: 2rem;
+  color: black;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .colors {
+    margin-top: 6vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto-fit, 20rem);
+  }
+
+  #logo .color {
+    height: 100%;
+  }
+
+  .library-popup,
+  .save-popup,
+  .copy-popup {
+    width: 90%;
+  }
+  .sliders {
+    width: 100%;
+  }
+
+  #logo {
+    top: 0.5rem;
+    left: 1rem;
+  }
+}
