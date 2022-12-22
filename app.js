@@ -50,7 +50,6 @@ barba.init({
         gsap.to('.line1', 0.4, { rotate: '0', y: 0, background: 'white' });
         gsap.to('.line2', 0.4, { rotate: '0', y: 0, background: 'white' });
         contactForm.classList.remove('active');
-        console.log(documewnt.querySelector('script'));
       },
       afterEnter() {
         gsap.fromTo(
@@ -88,7 +87,6 @@ barba.init({
         let carouselCounter = 3,
           slideLeft = 0;
         let carouselSlide = itemWidth + carouselMargin;
-        console.log('aaa');
 
         //Portfolio carousel handler
 
@@ -96,7 +94,6 @@ barba.init({
           if (carouselCounter < allElements) {
             carouselCounter++;
             slideLeft = slideLeft - carouselSlide;
-            console.log(slideLeft);
             carouselContent.style.marginLeft = slideLeft + 'px';
           }
           if (carouselCounter > 3) {
@@ -111,7 +108,6 @@ barba.init({
           if (carouselCounter > 3) {
             carouselCounter--;
             slideLeft = slideLeft + carouselSlide;
-            console.log(slideLeft);
             carouselContent.style.marginLeft = slideLeft + 'px';
           }
           if (carouselCounter < allElements) {
