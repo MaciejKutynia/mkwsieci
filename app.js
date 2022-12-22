@@ -39,7 +39,6 @@ barba.init({
         gsap.to('.line1', 0.4, { rotate: '0', y: 0, background: 'white' });
         gsap.to('.line2', 0.4, { rotate: '0', y: 0, background: 'white' });
         contactForm.classList.remove('active');
-        console.log(documewnt.querySelector('script'));
       },
     },
     {

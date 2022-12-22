@@ -402,13 +402,13 @@ section {
 
 .firm-name {
   font-size: 12rem;
-  animation: neon 1s infinite;
+  animation: neon 1.5s infinite;
 }
 
 .owner-name {
   font-size: 10rem;
-  animation: neon 1s infinite;
-  animation-delay: 0.5s;
+  animation: neon 1.5s infinite;
+  animation-delay: 0.75s;
   position: relative;
   left: 1%;
 }
@@ -416,8 +416,8 @@ section {
 .text {
   font-size: 6rem;
   letter-spacing: 0.7rem;
-  animation: neon 1s infinite;
-  animation-delay: 1s;
+  animation: neon 1.5s infinite;
+  animation-delay: 1.5s;
 }
 
 .swipe {
